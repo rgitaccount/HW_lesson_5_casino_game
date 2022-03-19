@@ -16,10 +16,12 @@ def play_game():
         win_or_loss = check_guess.make_bet(bank, SPINWHEEL_SIZE)
         bank += win_or_loss
         print(f'Your bank is {bank} $.\n')
+        if bank == 0:
+            break
         dialog = str(input('Would you like to continue? Type Y/N: '))
         if dialog.lower() == 'n':
             game_is_on = False
-            print('Good bye!')
+    print('Good bye!')
 
 
 play_game()
